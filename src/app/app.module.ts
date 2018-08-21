@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { FavoriteJokesComponent } from './favorite-jokes/favorite-jokes.component';
 import { JokeListComponent } from './joke-list/joke-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JokesComponent,
     FavoriteJokesComponent,
-    JokeListComponent
+    JokeListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
