@@ -1,3 +1,5 @@
-<p>
-  jokes works!
-</p>
+<h1>Chuck Norris jokes</h1>
+<joke-list
+  [jokes]="jokes$ | async"
+  (jokeLiked)="onJokeLiked($event)"
+></joke-list>
