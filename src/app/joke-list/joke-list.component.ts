@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { Joke } from '../model/joke';
 
 @Component({
   selector: 'app-joke-list',
   templateUrl: './joke-list.component.html',
   styleUrls: ['./joke-list.component.css']
 })
-export class JokeListComponent implements OnInit {
+export class JokeListComponent {
+  @Input() jokes: Joke[];
+  @Input() favorites: boolean;
 
-  constructor() { }
+  @Output() jokeLiked = new EventEmitter();
+  @Output() jokeUnliked = new EventEmitter();
 
-  ngOnInit() {
+  like(joke: Joke) {
+    this.jokeLiked.next(joke);
+  }
+
+  unlike(id: number) {
+    this.jokeUnliked.next(id);
   }
 
 }

@@ -1,3 +1,17 @@
-<p>
-  joke-list works!
-</p>
+<ul class="c-list">
+  <li class="c-list__item" *ngFor="let joke of jokes">
+    {joke.text}
+    <button
+      type="button"
+      class="c-btn c-btn-like"
+      (click)="like(joke)"
+      *ngIf="favorites"
+    ><i class="fa fa-heart"></i></button>
+    <button
+      type="button"
+      class="c-btn c-btn-remove"
+      (click)="unlike(joke.id)"
+      *ngIf="!favorites"
+    ><i class="fa fa-trash"></i></button>
+  </li>
+</ul>
