@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  @Input() randomFavoriteJokes: boolean;
+
+  @Output() randomFavoriteJokesToggled = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
+  toggle() {
+    this.randomFavoriteJokesToggled.emit();
   }
 
 }
