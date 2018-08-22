@@ -1,17 +1,17 @@
 <ul class="c-list">
   <li class="c-list__item" *ngFor="let joke of jokes">
-    {joke.text}
+    {{joke.joke}}
     <button
       type="button"
       class="c-btn c-btn-like"
       (click)="like(joke)"
-      *ngIf="favorites"
+      *ngIf="!favorites"
     ><i class="fa fa-heart"></i></button>
     <button
       type="button"
-      class="c-btn c-btn-remove"
+      class="c-btn c-btn-unlike"
       (click)="unlike(joke.id)"
-      *ngIf="!favorites"
+      *ngIf="favorites"
     ><i class="fa fa-trash"></i></button>
   </li>
 </ul>
