@@ -6,12 +6,12 @@
       class="c-btn c-btn-like"
       (click)="like(joke)"
       *ngIf="!favorites"
-    ><i class="fa fa-heart"></i></button>
+    >like</button>
     <button
       type="button"
       class="c-btn c-btn-unlike"
       (click)="unlike(joke.id)"
       *ngIf="favorites"
-    ><i class="fa fa-trash"></i></button>
+    >unlike</button>
   </li>
 </ul>
