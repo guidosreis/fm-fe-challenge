@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { toArray } from 'lodash';
 
 import { Joke } from '../model/joke';
 import { ApplicationState } from '../store/application-state';
 import { UnlikeJokeAction } from '../store/actions';
-
-function stateToFavoriteJokesSelector(state: ApplicationState): Joke[] {
-  return toArray(state.storeData.favoriteJokes);
-}
+import { mapStateToFavoriteJokes } from './mapStateToFavoriteJokes';
 
 @Component({
   selector: 'app-favorite-jokes',
@@ -20,7 +16,7 @@ export class FavoriteJokesComponent {
   favoriteJokes$: Observable<Joke[]>;
 
   constructor(private store: Store<ApplicationState>) {
-    this.favoriteJokes$ = store.select(stateToFavoriteJokesSelector);
+    this.favoriteJokes$ = store.select(mapStateToFavoriteJokes);
   }
 
   onJokeUnliked(id: number) {
