@@ -8,7 +8,7 @@ import { ApplicationState } from '../store/application-state';
 import { UnlikeJokeAction } from '../store/actions';
 
 function stateToFavoriteJokesSelector(state: ApplicationState): Joke[] {
-  return toArray(state.storeData.jokes);
+  return toArray(state.storeData.favoriteJokes);
 }
 
 @Component({
