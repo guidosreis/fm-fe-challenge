@@ -1,2 +1,5 @@
-<app-header></app-header>
+<app-header
+  [randomFavoriteJokes]="randomFavoriteJokes$ | async"
+  (randomFavoriteJokesToggled)="onRandomFavoriteJokesToggled($event)"
+></app-header>
 <router-outlet></router-outlet>
