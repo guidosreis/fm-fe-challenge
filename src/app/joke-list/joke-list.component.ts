@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Joke } from '../model/joke';
 
 @Component({
-  selector: 'app-joke-list',
+  selector: 'joke-list',
   templateUrl: './joke-list.component.html',
   styleUrls: ['./joke-list.component.css']
 })
