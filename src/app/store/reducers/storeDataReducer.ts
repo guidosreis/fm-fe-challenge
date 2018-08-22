@@ -1,3 +1,4 @@
+import { LoadJokeSuccessAction } from './../actions';
 import { cloneDeep, keyBy } from 'lodash';
 
 import { StoreData, INITIAL_STORE_DATA } from './../store-data';
@@ -5,12 +6,12 @@ import {
   LOAD_JOKES_SUCCESS, LoadJokesSuccessAction,
   LIKE_JOKE, LikeJokeAction,
   UNLIKE_JOKE, UnlikeJokeAction
-} from './../actions';
+} from '../actions';
 
 export function storeData(state: StoreData = INITIAL_STORE_DATA, action: any): StoreData {
   switch(action.type) {
     case LOAD_JOKES_SUCCESS:
-      return handleJokesSuccessAction(state, <any>action);
+      return handleLoadJokesSuccessAction(state, <any>action);
 
     case LIKE_JOKE:
       return handleLikeJokeAction(state, <any>action);
@@ -23,7 +24,7 @@ export function storeData(state: StoreData = INITIAL_STORE_DATA, action: any): S
   }
 }
 
-function handleJokesSuccessAction(state: StoreData, action: LoadJokesSuccessAction): StoreData {
+function handleLoadJokesSuccessAction(state: StoreData, action: LoadJokesSuccessAction): StoreData {
   const newState = cloneDeep(state);
 
   newState.jokes = keyBy(action.payload, 'id');
