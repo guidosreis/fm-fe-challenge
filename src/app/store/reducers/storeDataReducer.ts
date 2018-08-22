@@ -34,7 +34,7 @@ function handleJokesSuccessAction(state: StoreData, action: LoadJokesSuccessActi
 function handleLikeJokeAction(state: StoreData, action: LikeJokeAction): StoreData {
   const newState = cloneDeep(state);
 
-  newState.favoriteJokes[action.payload.id] = action.payload[action.payload.id];
+  newState.favoriteJokes[action.payload.id] = action.payload;
 
   return newState;
 }
