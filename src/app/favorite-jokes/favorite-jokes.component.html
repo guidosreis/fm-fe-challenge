@@ -1,6 +1,5 @@
 <h1>My favorite Chuck Norris jokes</h1>
-<joke-list
-  [jokes]="favoriteJokes$ | async"
-  [favorites]="true"
+<favorite-joke-list
+  [favoriteJokes]="favoriteJokes$ | async"
   (jokeUnliked)="onJokeUnliked($event)"
-></joke-list>
+></favorite-joke-list>
