@@ -17,4 +17,13 @@ export class JokeListComponent {
     this.jokeLiked.next(joke);
   }
 
+  inFavoriteList(id: number) {
+    for (let i = 0; i < this.favoriteJokes.length; i++) {
+      const joke = this.favoriteJokes[i];
+      if (id === joke.id) return true;
+    }
+    
+    return false;
+  }
+
 }
