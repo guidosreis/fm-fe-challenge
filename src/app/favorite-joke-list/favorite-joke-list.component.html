@@ -1,0 +1,10 @@
+<ul class="c-list">
+  <li class="c-list__item" *ngFor="let joke of favoriteJokes">
+    {{joke.joke}}
+    <button
+      type="button"
+      class="c-btn c-btn-unlike"
+      (click)="unlike(joke.id)"
+    >unlike</button>
+  </li>
+</ul>

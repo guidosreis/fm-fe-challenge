@@ -22,6 +22,7 @@ import { JokesService } from './services/jokes.service';
 import { reducers } from './store/reducers/index';
 import { INITIAL_APPLICATION_STATE } from './store/application-state';
 import { LoadJokesEffectService } from './store/effects/load-jokes-effect.service';
+import { FavoriteJokeListComponent } from './favorite-joke-list/favorite-joke-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoadJokesEffectService } from './store/effects/load-jokes-effect.servic
     JokesComponent,
     FavoriteJokesComponent,
     JokeListComponent,
-    HeaderComponent
+    HeaderComponent,
+    FavoriteJokeListComponent
   ],
   imports: [
     BrowserModule,
