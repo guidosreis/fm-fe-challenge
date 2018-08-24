@@ -23,6 +23,7 @@ import { reducers } from './store/reducers/index';
 import { INITIAL_APPLICATION_STATE } from './store/application-state';
 import { LoadJokesEffectService } from './store/effects/load-jokes-effect.service';
 import { FavoriteJokeListComponent } from './favorite-joke-list/favorite-joke-list.component';
+import { LoadFavoriteJokesEffectService } from './store/effects/load-favorite-jokes-effect.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FavoriteJokeListComponent } from './favorite-joke-list/favorite-joke-li
     HttpClientModule,
     StoreModule.forRoot(reducers, { initialState: INITIAL_APPLICATION_STATE }),
     EffectsModule.forRoot([
-      LoadJokesEffectService
+      LoadJokesEffectService,
+      LoadFavoriteJokesEffectService
     ]),
     AppRoutingModule
   ],
