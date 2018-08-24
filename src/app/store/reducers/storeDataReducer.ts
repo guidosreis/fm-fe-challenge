@@ -1,11 +1,11 @@
-import { LoadJokeSuccessAction } from './../actions';
-import { cloneDeep, keyBy } from 'lodash';
+import { cloneDeep, keyBy, toArray } from 'lodash';
 
-import { StoreData, INITIAL_STORE_DATA } from './../store-data';
+import { StoreData, INITIAL_STORE_DATA } from '../store-data';
 import {
   LOAD_JOKES_SUCCESS, LoadJokesSuccessAction,
   LIKE_JOKE, LikeJokeAction,
-  UNLIKE_JOKE, UnlikeJokeAction
+  UNLIKE_JOKE, UnlikeJokeAction,
+  LOAD_FAVORITE_JOKES_SUCCESS, LoadFavoriteJokesSuccessAction
 } from '../actions';
 
 export function storeData(state: StoreData = INITIAL_STORE_DATA, action: any): StoreData {
@@ -18,6 +18,9 @@ export function storeData(state: StoreData = INITIAL_STORE_DATA, action: any): S
 
     case UNLIKE_JOKE:
       return handleUnlikeJokeAction(state, <any>action);
+
+    case LOAD_FAVORITE_JOKES_SUCCESS:
+      return handleLoadFavoriteJokesSuccessAction(state, <any>action);
 
     default:
       return state;
@@ -37,6 +40,9 @@ function handleLikeJokeAction(state: StoreData, action: LikeJokeAction): StoreDa
 
   newState.favoriteJokes[action.payload.id] = action.payload;
 
+  const jokes = toArray(newState.favoriteJokes);
+  localStorage.setItem('FAVORITE_JOKES', JSON.stringify({jokes}));
+
   return newState;
 }
 
@@ -44,6 +50,17 @@ function handleUnlikeJokeAction(state: StoreData, action: UnlikeJokeAction): Sto
   const newState = cloneDeep(state);
 
   delete newState.favoriteJokes[action.payload];
+
+  const jokes = toArray(newState.favoriteJokes);
+  localStorage.setItem('FAVORITE_JOKES', JSON.stringify({jokes}));
+
+  return newState;
+}
+
+function handleLoadFavoriteJokesSuccessAction(state: StoreData, action: LoadFavoriteJokesSuccessAction): StoreData {
+  const newState = cloneDeep(state);
+
+  newState.favoriteJokes = keyBy(action.payload, 'id');
 
   return newState;
 }
