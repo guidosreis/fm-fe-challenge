@@ -3,7 +3,12 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { ApplicationState } from './store/application-state';
-import { LoadJokesAction, ToggleRandomFavoriteJokeAction, LoadJokeAction } from './store/actions';
+import {
+  LoadJokesAction,
+  ToggleRandomFavoriteJokeAction,
+  LoadJokeAction,
+  LoadFavoriteJokesAction
+} from './store/actions';
 import { Joke } from './model/joke';
 import { mapStateToFavoriteJokes } from './favorite-jokes/mapStateToFavoriteJokes';
 
@@ -29,6 +34,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new LoadJokesAction());
+    this.store.dispatch(new LoadFavoriteJokesAction());
 
     this.favoriteJokes$
       .subscribe(favoriteJokes => this.favoriteJokes = favoriteJokes);
