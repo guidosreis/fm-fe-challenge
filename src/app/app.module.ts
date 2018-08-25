@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -37,6 +38,7 @@ import { LoadFavoriteJokesEffectService } from './store/effects/load-favorite-jo
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { initialState: INITIAL_APPLICATION_STATE }),
     EffectsModule.forRoot([
