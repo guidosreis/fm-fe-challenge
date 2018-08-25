@@ -60,7 +60,7 @@ body {
 }
 
 .wrapper {
-  padding-top: 80px;
+  padding-top: 150px;
 }
 
 .c-title {
@@ -153,6 +153,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .wrapper {
+    padding-top: 80px;
+  }
+  
   .c-title {
     font-size: 28px;
   }
