@@ -1,23 +1,33 @@
 <div class="c-header">
-  <div class="container">
-    <nav class="c-nav">
-      <ul class="c-menu">
-        <li class="c-menu__item">
-          <a
-            class="c-menu__link"
-            routerLink="/jokes"
-            routerLinkActive="m-active"
-          >Jokes</a>
-        </li>
-        <li class="c-menu__item">
-          <a
-            class="c-menu__link"
-            routerLink="/favorite-jokes"
-            routerLinkActive="m-active"
-          >My Favorite Jokes</a>
-        </li>
-      </ul>
-      <button (click)="toggle()">Toggle</button>
-    </nav>
-  </div>
+  <nav class="c-nav">
+    <ul class="c-menu">
+      <li class="c-menu__item">
+        <a
+          class="c-menu__link"
+          routerLink="/jokes"
+          routerLinkActive="m-active"
+        >Jokes</a>
+      </li>
+      <li class="c-menu__item">
+        <a
+          class="c-menu__link"
+          routerLink="/favorite-jokes"
+          routerLinkActive="m-active"
+        >My Favorite Jokes</a>
+      </li>
+    </ul>
+    <label class="c-toggle">
+      <span class="c-switch">
+        <input
+          type="checkbox"
+          id="randomFavoriteJokes"
+          class="c-switch__input"
+          [ngModel]="randomFavoriteJokes"
+          (change)="toggle()"
+        >
+        <span class="c-switch__slider"></span>
+      </span>
+      random favorite jokes
+    </label>
+  </nav>
 </div>
