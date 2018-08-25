@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -27,7 +28,10 @@ export class AppComponent implements OnInit {
   favoriteJokes: Joke[];
   timer: any;
 
-  constructor(private store: Store<ApplicationState>) {
+  constructor(
+    private store: Store<ApplicationState>,
+    private router: Router
+  ) {
     this.randomFavoriteJokes$ = store.select(mapStateToRandomFavoriteJoke);
     this.favoriteJokes$ = store.select(mapStateToFavoriteJokes);
   }
@@ -46,6 +50,10 @@ export class AppComponent implements OnInit {
         };
 
         this.updateTimer();
+
+        if (!/favorite-jokes/.test(this.router.url)) {
+          this.router.navigate(['/favorite-jokes']);
+        }
       });
   }
 
