@@ -1,13 +1,23 @@
 <div class="c-header">
-  <nav class="c-nav">
-    <ul class="c-menu">
-      <li class="c-menu__item">
-        <a [routerLink]="'/jokes'">Jokes</a>
-      </li>
-      <li class="c-menu__item">
-        <a [routerLink]="'/favorite-jokes'">My Favorite Jokes</a>
-      </li>
-    </ul>
-    <button (click)="toggle()">Toggle</button>
-  </nav>
+  <div class="container">
+    <nav class="c-nav">
+      <ul class="c-menu">
+        <li class="c-menu__item">
+          <a
+            class="c-menu__link"
+            routerLink="/jokes"
+            routerLinkActive="m-active"
+          >Jokes</a>
+        </li>
+        <li class="c-menu__item">
+          <a
+            class="c-menu__link"
+            routerLink="/favorite-jokes"
+            routerLinkActive="m-active"
+          >My Favorite Jokes</a>
+        </li>
+      </ul>
+      <button (click)="toggle()">Toggle</button>
+    </nav>
+  </div>
 </div>

@@ -1,0 +1,31 @@
+.c-header {
+  background-color: #0e83cd;
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.c-nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-menu__item {
+  display: inline-block;
+}
+
+.c-menu__link {
+  color: #ffffff;
+  display: block;
+  padding: 18px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.m-active {
+  background-color: rgba(0, 0, 0, .15);
+}
