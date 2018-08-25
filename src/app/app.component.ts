@@ -51,10 +51,11 @@ export class AppComponent implements OnInit {
 
   updateTimer() {
     this.timer = setTimeout(() => {
-      if (this.favoriteJokes.length < 10) {
-        this.store.dispatch(new LoadJokeAction());
+      if (this.favoriteJokes.length === 10) {
+        return this.store.dispatch(new ToggleRandomFavoriteJokeAction());
       }
-
+      
+      this.store.dispatch(new LoadJokeAction());
       this.updateTimer();
     }, 1000);
   }
