@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
       
       this.store.dispatch(new LoadJokeAction());
       this.updateTimer();
-    }, 1000);
+    }, 5000);
   }
 
   onRandomFavoriteJokesToggled() {
