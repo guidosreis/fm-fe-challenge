@@ -25,6 +25,7 @@ import { INITIAL_APPLICATION_STATE } from './store/application-state';
 import { LoadJokesEffectService } from './store/effects/load-jokes-effect.service';
 import { FavoriteJokeListComponent } from './favorite-joke-list/favorite-joke-list.component';
 import { LoadFavoriteJokesEffectService } from './store/effects/load-favorite-jokes-effect.service';
+import { LikeJokeEffectService } from './store/effects/like-joke-effect.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LoadFavoriteJokesEffectService } from './store/effects/load-favorite-jo
     StoreModule.forRoot(reducers, { initialState: INITIAL_APPLICATION_STATE }),
     EffectsModule.forRoot([
       LoadJokesEffectService,
+      LikeJokeEffectService,
       LoadFavoriteJokesEffectService
     ]),
     AppRoutingModule
