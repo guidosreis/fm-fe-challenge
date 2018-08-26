@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
       .subscribe(randomFavoriteJokes => {
         if (!randomFavoriteJokes) {
           return clearTimeout(this.timer);
-        };
+        }
 
         this.updateTimer();
 
@@ -58,17 +58,16 @@ export class AppComponent implements OnInit {
   }
 
   updateTimer() {
-    this.timer = setTimeout(() => {
-      if (this.favoriteJokes.length === 10) {
-        return this.store.dispatch(new ToggleRandomFavoriteJokeAction());
-      }
-      
+    if (this.favoriteJokes.length < 10) {
       this.store.dispatch(new LoadJokeAction());
+    }
+
+    this.timer = setTimeout(() => {
       this.updateTimer();
     }, 5000);
   }
 
-  onRandomFavoriteJokesToggled() {
-    this.store.dispatch(new ToggleRandomFavoriteJokeAction())
+  onRandomFavoriteJokesToggled(event) {
+    this.store.dispatch(new ToggleRandomFavoriteJokeAction(event));
   }
 }
