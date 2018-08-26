@@ -45,6 +45,8 @@ export class UnlikeJokeAction implements Action {
 
 export class ToggleRandomFavoriteJokeAction implements Action {
   readonly type = TOGGLE_RANDOM_FAVORITE_JOKE;
+
+  constructor(public payload: boolean) { }
 }
 
 export class LoadFavoriteJokesAction implements Action {
