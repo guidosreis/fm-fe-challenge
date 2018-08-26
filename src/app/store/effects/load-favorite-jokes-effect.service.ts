@@ -6,7 +6,6 @@ import { switchMap, map } from 'rxjs/operators';
 
 import { JokesService } from '../../services/jokes.service';
 import { LoadFavoriteJokesAction, LOAD_FAVORITE_JOKES, LoadFavoriteJokesSuccessAction } from '../actions';
-import { Joke } from '../../model/joke';
 
 @Injectable({
   providedIn: 'root'
