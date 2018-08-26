@@ -13,7 +13,7 @@ export class HeaderComponent {
   constructor() { }
 
   toggle() {
-    this.randomFavoriteJokesToggled.emit();
+    this.randomFavoriteJokesToggled.emit(this.randomFavoriteJokes);
   }
 
 }
