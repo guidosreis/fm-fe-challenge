@@ -6,7 +6,7 @@ import jokes from '../../model/jokes.mock';
 import favoriteJokes from '../../model/favorite-jokes.mock';
 import { INITIAL_STORE_DATA } from '../store-data';
 
-fdescribe('StoreDataReducer', () => {
+describe('StoreDataReducer', () => {
   describe('undefined action', () => {
     it('should return the default state', () => {
       const action = {};
