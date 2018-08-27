@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './header.component';
 
-fdescribe('HeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
   let switchDe: DebugElement;
