@@ -7,7 +7,7 @@ import { of } from 'rxjs';
 import { Joke } from '../model/joke';
 
 const API = `${environment.API}jokes/`;
-const FAVORITE_JOKES = 'FAVORITE_JOKES';
+export const FAVORITE_JOKES = 'FAVORITE_JOKES';
 
 @Injectable({
   providedIn: 'root'
