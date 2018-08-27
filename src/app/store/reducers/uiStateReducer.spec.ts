@@ -2,7 +2,7 @@ import * as fromReducer from './uiStateReducer';
 import * as fromActions from '../actions';
 import { INITIAL_UI_STATE } from '../ui-state';
 
-fdescribe('UiStateReducer', () => {
+describe('UiStateReducer', () => {
   describe('undefined action', () => {
     it('should return the default state', () => {
       const action = {};
