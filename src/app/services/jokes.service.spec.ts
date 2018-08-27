@@ -6,7 +6,7 @@ import { JokesService, FAVORITE_JOKES } from './jokes.service';
 import jokes from '../model/jokes.mock';
 import favoriteJokes from '../model/favorite-jokes.mock';
 
-fdescribe('JokesService', () => {
+describe('JokesService', () => {
   let service: JokesService;
   let httpMock: HttpTestingController;
 
