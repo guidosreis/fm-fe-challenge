@@ -11,7 +11,7 @@ import { routes } from './app-routing.module';
 import { JokesComponent } from './jokes/jokes.component';
 import { FavoriteJokesComponent } from './favorite-jokes/favorite-jokes.component';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   let store: Store<fromApplicationState.ApplicationState>;
