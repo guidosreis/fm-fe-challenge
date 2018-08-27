@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { FavoriteJokeListComponent } from './favorite-joke-list.component';
 import favoriteJokes from '../model/favorite-jokes.mock';
 
-fdescribe('FavoriteJokeListComponent', () => {
+describe('FavoriteJokeListComponent', () => {
   let component: FavoriteJokeListComponent;
   let fixture: ComponentFixture<FavoriteJokeListComponent>;
   let listDe: DebugElement;
