@@ -8,7 +8,7 @@ import { Joke } from '../model/joke';
 import jokes from '../model/jokes.mock';
 import favoriteJokes from '../model/favorite-jokes.mock';
 
-fdescribe('JokeListComponent', () => {
+describe('JokeListComponent', () => {
   let component: JokeListComponent;
   let fixture: ComponentFixture<JokeListComponent>;
   let listDe: DebugElement;
