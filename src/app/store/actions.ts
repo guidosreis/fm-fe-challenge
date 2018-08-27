@@ -8,6 +8,8 @@ export const LOAD_JOKE_SUCCESS = 'LOAD_JOKE';
 export const LIKE_JOKE = 'LIKE_JOKE';
 export const UNLIKE_JOKE = 'UNLIKE_JOKE';
 export const TOGGLE_RANDOM_FAVORITE_JOKE = 'TOGGLE_RANDOM_FAVORITE_JOKE';
+export const LOAD_FAVORITE_JOKES = 'LOAD_FAVORITE_JOKES';
+export const LOAD_FAVORITE_JOKES_SUCCESS = 'LOAD_FAVORITE_JOKES_SUCCESS';
 
 export class LoadJokesAction implements Action {
   readonly type = LOAD_JOKES;
@@ -43,4 +45,16 @@ export class UnlikeJokeAction implements Action {
 
 export class ToggleRandomFavoriteJokeAction implements Action {
   readonly type = TOGGLE_RANDOM_FAVORITE_JOKE;
+
+  constructor(public payload: boolean) { }
+}
+
+export class LoadFavoriteJokesAction implements Action {
+  readonly type = LOAD_FAVORITE_JOKES;
+}
+
+export class LoadFavoriteJokesSuccessAction implements Action {
+  readonly type = LOAD_FAVORITE_JOKES_SUCCESS;
+
+  constructor(public payload: Joke[]) { }
 }

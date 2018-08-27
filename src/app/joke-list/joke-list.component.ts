@@ -9,17 +9,21 @@ import { Joke } from '../model/joke';
 })
 export class JokeListComponent {
   @Input() jokes: Joke[];
-  @Input() favorites: boolean;
+  @Input() favoriteJokes: Joke[];
 
   @Output() jokeLiked = new EventEmitter();
-  @Output() jokeUnliked = new EventEmitter();
 
   like(joke: Joke) {
     this.jokeLiked.next(joke);
   }
 
-  unlike(id: number) {
-    this.jokeUnliked.next(id);
+  inFavoriteList(id: number) {
+    for (let i = 0; i < this.favoriteJokes.length; i++) {
+      const joke = this.favoriteJokes[i];
+      if (id === joke.id) return true;
+    }
+    
+    return false;
   }
 
 }

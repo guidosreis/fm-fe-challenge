@@ -6,8 +6,9 @@ import { toArray } from 'lodash';
 import { Joke } from '../model/joke';
 import { ApplicationState } from '../store/application-state';
 import { LikeJokeAction } from '../store/actions';
+import { mapStateToFavoriteJokes } from '../favorite-jokes/mapStateToFavoriteJokes';
 
-function stateToJokesSelector(state: ApplicationState): Joke[] {
+function mapStateToJokes(state: ApplicationState): Joke[] {
   return toArray(state.storeData.jokes);
 }
 
@@ -18,9 +19,11 @@ function stateToJokesSelector(state: ApplicationState): Joke[] {
 })
 export class JokesComponent {
   jokes$: Observable<Joke[]>;
+  favoriteJokes$: Observable<Joke[]>;
 
   constructor(private store: Store<ApplicationState>) {
-    this.jokes$ = store.select(stateToJokesSelector);
+    this.jokes$ = store.select(mapStateToJokes);
+    this.favoriteJokes$ = store.select(mapStateToFavoriteJokes);
   }
 
   onJokeLiked(joke: Joke) {

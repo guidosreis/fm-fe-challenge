@@ -1,0 +1,12 @@
+<ul class="c-list">
+  <li class="c-list__item" *ngFor="let joke of favoriteJokes">
+    {{joke.joke}}
+    <button
+      type="button"
+      class="c-btn c-btn-unlike"
+      (click)="unlike(joke.id)"
+    ><i class="fa fa-trash-alt"></i></button>
+  </li>
+</ul>
+
+<p *ngIf="!favoriteJokes.length" class="u-text-center">The are no jokes on your favorite list. Please go to the list page and favorite some joke, or activate the option above.</p>

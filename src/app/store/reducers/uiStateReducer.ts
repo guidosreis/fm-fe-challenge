@@ -7,7 +7,7 @@ export function uiState(state: UiState = INITIAL_UI_STATE, action: any): UiState
   switch(action.type) {
     case TOGGLE_RANDOM_FAVORITE_JOKE:
       const newState = cloneDeep(state);
-      newState.randomFavoriteJokes = !newState.randomFavoriteJokes;
+      newState.randomFavoriteJokes = action.payload;
       return newState;
 
     default:

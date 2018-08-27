@@ -5,13 +5,7 @@
       type="button"
       class="c-btn c-btn-like"
       (click)="like(joke)"
-      *ngIf="!favorites"
-    >like</button>
-    <button
-      type="button"
-      class="c-btn c-btn-unlike"
-      (click)="unlike(joke.id)"
-      *ngIf="favorites"
-    >unlike</button>
+      [disabled]="favoriteJokes.length === 10 || inFavoriteList(joke.id)"
+    ><i class="fa fa-thumbs-up"></i></button>
   </li>
 </ul>

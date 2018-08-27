@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -22,6 +23,9 @@ import { JokesService } from './services/jokes.service';
 import { reducers } from './store/reducers/index';
 import { INITIAL_APPLICATION_STATE } from './store/application-state';
 import { LoadJokesEffectService } from './store/effects/load-jokes-effect.service';
+import { FavoriteJokeListComponent } from './favorite-joke-list/favorite-joke-list.component';
+import { LoadFavoriteJokesEffectService } from './store/effects/load-favorite-jokes-effect.service';
+import { LikeJokeEffectService } from './store/effects/like-joke-effect.service';
 
 @NgModule({
   declarations: [
@@ -29,15 +33,19 @@ import { LoadJokesEffectService } from './store/effects/load-jokes-effect.servic
     JokesComponent,
     FavoriteJokesComponent,
     JokeListComponent,
-    HeaderComponent
+    HeaderComponent,
+    FavoriteJokeListComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { initialState: INITIAL_APPLICATION_STATE }),
     EffectsModule.forRoot([
-      LoadJokesEffectService
+      LoadJokesEffectService,
+      LikeJokeEffectService,
+      LoadFavoriteJokesEffectService
     ]),
     AppRoutingModule
   ],
