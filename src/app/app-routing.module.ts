@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { JokesComponent } from './jokes/jokes.component';
 import { FavoriteJokesComponent } from './favorite-jokes/favorite-jokes.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'jokes' },
   { path: 'jokes', component: JokesComponent },
   { path: 'favorite-jokes', component: FavoriteJokesComponent }
