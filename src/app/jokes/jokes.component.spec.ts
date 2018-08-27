@@ -9,7 +9,7 @@ import * as fromApplicationState from '../store/application-state';
 import * as fromReducer from '../store/reducers';
 import * as fromActions from '../store/actions';
 
-fdescribe('JokesComponent', () => {
+describe('JokesComponent', () => {
   let component: JokesComponent;
   let fixture: ComponentFixture<JokesComponent>;
   let store: Store<fromApplicationState.ApplicationState>;
